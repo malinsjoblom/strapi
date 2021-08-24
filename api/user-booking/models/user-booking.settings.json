@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_bookings",
+  "info": {
+    "name": "userBooking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "timeToAppointment": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "integer"
+    },
+    "users_permissions_permission": {
+      "plugin": "users-permissions",
+      "model": "permission",
+      "via": "user_bookings"
+    },
+    "products": {
+      "collection": "product",
+      "via": "user_booking"
+    },
+    "appointment": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}
